@@ -8,13 +8,13 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #E1F5FE; /* สีพื้นหลังฟ้าพลาสเทลอ่อน */
-    color: #0277BD; /* สีข้อความเข้มที่ตัดกับพื้นหลัง */
+    background-color: #121212; /* สีดำมืด */
+    color: #E0E0E0; /* สีข้อความเทาอ่อน */
 }
 
 /* Header Section */
 header {
-    background-color: #039BE5; /* สีพื้นหลังของ header */
+    background-color: #1F1F1F; /* สีดำเข้ม */
     padding: 10px 0;
 }
 
@@ -30,41 +30,41 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: #FFFFFF; /* สีข้อความขาว */
     font-size: 18px;
-    transition: color 0.3s, transform 0.3s; /* เพิ่ม transition สำหรับการขยายขนาด */
-    display: inline-block; /* ทำให้ลิงก์สามารถขยายได้ */
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
 }
 
 nav ul li a:hover {
-    color: #FFEB3B; /* สีของลิงก์เมื่อ hover */
-    transform: scale(1.2); /* ขยายขนาดตัวอักษรเมื่อ hover */
+    color: #BB86FC; /* สีม่วงนีออนเมื่อ hover */
+    transform: scale(1.2);
 }
 
 /* Main Content */
 main {
     padding: 20px;
-    padding-bottom: 80px; /* ปรับค่าให้เท่ากับความสูงของ Footer */
-}
-.history {
-    opacity: 0;
-    transform: translateY(50px); /* ซ่อนเนื้อหาด้านล่าง */
-    animation: slideUp 1s ease-out forwards; /* ใช้ animation เพื่อให้ข้อความขึ้นจากด้านล่าง */
+    padding-bottom: 80px;
 }
 
-/* Animation ที่จะทำให้ข้อความค่อยๆ ขึ้นจากด้านล่าง */
+.history {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s ease-out forwards;
+    color: #E0E0E0; /* สีข้อความเทาอ่อน */
+}
+
 @keyframes slideUp {
     0% {
         opacity: 0;
-        transform: translateY(50px); /* เริ่มจากด้านล่าง */
+        transform: translateY(50px);
     }
     100% {
         opacity: 1;
-        transform: translateY(0); /* ขึ้นมาที่ตำแหน่งเดิม */
+        transform: translateY(0);
     }
 }
 
-/* เพิ่ม transition ให้กับแต่ละบรรทัด */
 .history p {
     line-height: 1.8;
 }
@@ -72,21 +72,19 @@ main {
 .history p span {
     display: inline-block;
     opacity: 0;
-    transform: translateY(10px); /* ทำให้ข้อความแต่ละบรรทัดปรากฏจากด้านล่าง */
+    transform: translateY(10px);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-/* การแสดงข้อความทีละบรรทัด */
 .history p span.show {
     opacity: 1;
     transform: translateY(0);
 }
 
-
 /* Hero Section */
 .hero {
-    background-color: #81D4FA; /* สีพื้นหลัง hero แบบฟ้าพลาสเทล */
-    color: #01579B; /* สีข้อความเข้มสำหรับ hero */
+    background-color: #1E1E1E; /* สีดำเทา */
+    color: #BB86FC; /* สีม่วงนีออน */
     text-align: center;
     padding: 50px 20px;
 }
@@ -94,15 +92,18 @@ main {
 .hero h1 {
     font-size: 36px;
     margin-bottom: 10px;
+    color: #FFFFFF; /* สีข้อความขาว */
 }
+
 .hero h2 {
-    margin-top: 20px; /* เพิ่มระยะห่างจากข้อความก่อนหน้า */
+    margin-top: 20px;
     font-size: 1.8em;
-    color: #0277BD; /* สีฟ้าเข้ม */
+    color: #BB86FC; /* สีม่วงนีออน */
 }
 
 .hero p {
     font-size: 20px;
+    color: #E0E0E0; /* สีข้อความเทาอ่อน */
 }
 
 /* Highlights Section */
@@ -113,50 +114,51 @@ main {
 }
 
 .highlights article {
-    background-color: white;
+    background-color: #242424; /* สีดำเทาเข้ม */
     border-radius: 8px;
-    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1); /* เพิ่มแรเงา */
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.5);
     padding: 20px;
     width: 45%;
     text-align: center;
-    cursor: pointer; /* ให้มีเคอร์เซอร์เป็น pointer เมื่อ hover */
-    transition: transform 0.3s ease; /* เพิ่ม transition สำหรับการขยาย */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: #E0E0E0; /* สีข้อความเทาอ่อน */
 }
 
 .highlights article:hover {
-    transform: scale(1.05); /* ขยายขนาดเมื่อ hover */
+    transform: scale(1.05);
+    background-color: #333333; /* สีเทาเข้มเมื่อ hover */
 }
 
-/* เพิ่มสีเมื่อเลือก */
 .highlights article.active {
-    background-color: #B3E5FC; /* เปลี่ยนสีพื้นหลังเมื่อเลือก */
-    border: 2px solid #0277BD; /* เพิ่มกรอบสีน้ำเงิน */
-    transform: scale(1.1); /* ขยายขนาดเมื่อคลิก */
+    background-color: #333333; /* สีเทาเข้มเมื่อ active */
+    border: 2px solid #BB86FC; /* สีม่วงนีออน */
+    transform: scale(1.1);
 }
 
 .highlights article img {
-    width: 100%; /* ทำให้รูปภาพมีความกว้างเต็มกรอบ */
-    height: 200px; /* กำหนดความสูงของรูปภาพให้คงที่ */
-    object-fit: cover; /* ให้รูปภาพครอบคลุมพื้นที่โดยไม่บิดเบือน */
-    border-radius: 8px; /* ให้มุมของรูปภาพโค้ง */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .highlights h3 {
     margin-top: 15px;
     font-size: 24px;
-    color: #0277BD; /* สีข้อความหัวข้อที่เข้ม */
+    color: #BB86FC; /* สีม่วงนีออน */
 }
 
 .highlights p {
     font-size: 16px;
-    color: #01579B; /* สีข้อความที่เข้มขึ้น */
+    color: #E0E0E0; /* สีข้อความเทาอ่อน */
     margin-top: 10px;
 }
 
 /* Footer Section */
 footer {
-    background-color: #039BE5; /* สีพื้นหลังของ footer */
-    color: white;
+    background-color: #1F1F1F; /* สีดำเข้ม */
+    color: #FFFFFF; /* สีข้อความขาว */
     text-align: center;
     padding: 20px;
     position: fixed;
@@ -168,10 +170,9 @@ footer {
 .details-section {
     margin-top: 40px;
     padding: 20px;
-    background-color: #FFFFFF;
+    background-color: #1E1E1E; /* สีดำเทา */
     border-radius: 8px;
-    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
-    display: none; /* ซ่อนรายละเอียดไว้ก่อน */
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.5);
+    display: none;
+    color: #E0E0E0; /* สีข้อความเทาอ่อน */
 }
-
-
