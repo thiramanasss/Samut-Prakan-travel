@@ -1,24 +1,22 @@
-function showDetails(place, element) {
-    // ลบคลาส active จากทุกสถานที่
-    var items = document.querySelectorAll('.highlight-item');
-    items.forEach(function(item) {
-        item.classList.remove('active');
+// เมื่อหน้าเว็บโหลดเสร็จให้แสดงประวัติความเป็นมาค่อยๆ ปรากฏทีละบรรทัด
+window.onload = function() {
+    var historySection = document.getElementById('history');
+    historySection.classList.add('show');
+
+    var paragraphs = historySection.querySelectorAll('p');
+    var sentences = paragraphs[0].textContent.split('\n'); // แยกข้อความเป็นบรรทัดๆ
+
+    // สร้าง span สำหรับแต่ละบรรทัด
+    paragraphs[0].innerHTML = sentences.map(function(sentence) {
+        return '<span>' + sentence + '</span>';
+    }).join('');
+
+    var spans = paragraphs[0].querySelectorAll('span');
+    
+    // แสดงข้อความทีละบรรทัด
+    spans.forEach(function(span, index) {
+        setTimeout(function() {
+            span.classList.add('show');
+        }, index * 500); // เพิ่มเวลา delay สำหรับแต่ละบรรทัด
     });
-
-    // เพิ่มคลาส active ให้กับสถานที่ที่ถูกคลิก
-    element.classList.add('active');
-
-    var detailsContent = document.getElementById('details-content');
-
-    // เปลี่ยนรายละเอียดตามสถานที่ที่คลิก
-    if (place === 'place1') {
-        detailsContent.innerHTML = `รายละเอียดของสถานที่ 1`;
-    } else if (place === 'place2') {
-        detailsContent.innerHTML = `รายละเอียดของสถานที่ 2`;
-    }
-    // เพิ่ม else if สำหรับสถานที่อื่นๆ ตามต้องการ
-
-    // แสดงรายละเอียดสถานที่
-    var detailsSection = document.getElementById('place-details');
-    detailsSection.classList.add('show'); // เพิ่มคลาส .show เพื่อแสดงรายละเอียด
 }
