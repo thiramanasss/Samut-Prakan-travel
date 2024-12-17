@@ -1,0 +1,141 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+header {
+    background: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background: #0056b3;
+    color: #f9f9f9;
+}
+
+.hero {
+    text-align: center;
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 60px 20px;
+    background-color: #007BFF;
+    background-blend-mode: overlay;
+}
+
+.hero h1 {
+    margin: 0 0 10px;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.highlights {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+    background: #fff;
+}
+
+.highlights h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+.highlights article {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.highlights article:hover {
+    transform: translateY(-5px);
+}
+
+.highlights img {
+    width: 100%;
+    height: auto;
+}
+
+.highlights h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.highlights p {
+    padding: 0 10px 20px;
+    font-size: 1em;
+    color: #666;
+}
+
+footer {
+    text-align: center;
+    background: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-top: 2px solid #0056b3;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .highlights {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+}
