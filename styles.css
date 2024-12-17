@@ -1,0 +1,178 @@
+/* General reset and body styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #121212; /* สีดำมืด */
+    color: #E0E0E0; /* สีข้อความเทาอ่อน */
+}
+
+/* Header Section */
+header {
+    background-color: #1F1F1F; /* สีดำเข้ม */
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFFFFF; /* สีข้อความขาว */
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    color: #BB86FC; /* สีม่วงนีออนเมื่อ hover */
+    transform: scale(1.2);
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    padding-bottom: 80px;
+}
+
+.history {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s ease-out forwards;
+    color: #E0E0E0; /* สีข้อความเทาอ่อน */
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.history p {
+    line-height: 1.8;
+}
+
+.history p span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.history p span.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero Section */
+.hero {
+    background-color: #1E1E1E; /* สีดำเทา */
+    color: #BB86FC; /* สีม่วงนีออน */
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #FFFFFF; /* สีข้อความขาว */
+}
+
+.hero h2 {
+    margin-top: 20px;
+    font-size: 1.8em;
+    color: #BB86FC; /* สีม่วงนีออน */
+}
+
+.hero p {
+    font-size: 20px;
+    color: #E0E0E0; /* สีข้อความเทาอ่อน */
+}
+
+/* Highlights Section */
+.highlights {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.highlights article {
+    background-color: #242424; /* สีดำเทาเข้ม */
+    border-radius: 8px;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 45%;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: #E0E0E0; /* สีข้อความเทาอ่อน */
+}
+
+.highlights article:hover {
+    transform: scale(1.05);
+    background-color: #333333; /* สีเทาเข้มเมื่อ hover */
+}
+
+.highlights article.active {
+    background-color: #333333; /* สีเทาเข้มเมื่อ active */
+    border: 2px solid #BB86FC; /* สีม่วงนีออน */
+    transform: scale(1.1);
+}
+
+.highlights article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.highlights h3 {
+    margin-top: 15px;
+    font-size: 24px;
+    color: #BB86FC; /* สีม่วงนีออน */
+}
+
+.highlights p {
+    font-size: 16px;
+    color: #E0E0E0; /* สีข้อความเทาอ่อน */
+    margin-top: 10px;
+}
+
+/* Footer Section */
+footer {
+    background-color: #1F1F1F; /* สีดำเข้ม */
+    color: #FFFFFF; /* สีข้อความขาว */
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Section to display place details */
+.details-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #1E1E1E; /* สีดำเทา */
+    border-radius: 8px;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.5);
+    display: none;
+    color: #E0E0E0; /* สีข้อความเทาอ่อน */
+}
