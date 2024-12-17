@@ -44,6 +44,7 @@ nav ul li a:hover {
 /* Main Content */
 main {
     padding: 20px;
+    padding-bottom: 80px; /* ปรับค่าให้เท่ากับความสูงของ Footer */
 }
 .history {
     opacity: 0;
@@ -172,3 +173,5 @@ footer {
     box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
     display: none; /* ซ่อนรายละเอียดไว้ก่อน */
 }
+
+
