@@ -8,13 +8,13 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #e0f7fa; /* สีฟ้าพลาสเทล */
-    color: #333;
+    background-color: #E1F5FE; /* สีพื้นหลังฟ้าพลาสเทลอ่อน */
+    color: #0277BD; /* สีข้อความเข้มที่ตัดกับพื้นหลัง */
 }
 
 /* Header Section */
 header {
-    background-color: #4fc3f7; /* สีฟ้าพลาสเทล */
+    background-color: #039BE5; /* สีพื้นหลังของ header */
     padding: 10px 0;
 }
 
@@ -32,12 +32,15 @@ nav ul li a {
     text-decoration: none;
     color: white;
     font-size: 18px;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s; /* เพิ่ม transition สำหรับการขยายขนาด */
+    display: inline-block; /* ทำให้ลิงก์สามารถขยายได้ */
 }
 
 nav ul li a:hover {
-    color: #ffffff;
+    color: #FFEB3B; /* สีของลิงก์เมื่อ hover */
+    transform: scale(1.2); /* ขยายขนาดตัวอักษรเมื่อ hover */
 }
+
 
 /* Main Content */
 main {
@@ -46,8 +49,8 @@ main {
 
 /* Hero Section */
 .hero {
-    background-color: #80deea; /* สีฟ้าพลาสเทล */
-    color: white;
+    background-color: #81D4FA; /* สีพื้นหลัง hero แบบฟ้าพลาสเทล */
+    color: #01579B; /* สีข้อความเข้มสำหรับ hero */
     text-align: center;
     padding: 50px 20px;
 }
@@ -56,6 +59,12 @@ main {
     font-size: 36px;
     margin-bottom: 10px;
 }
+.hero h2 {
+    margin-top: 20px; /* เพิ่มระยะห่างจากข้อความก่อนหน้า */
+    font-size: 1.8em;
+    color: #0277BD; /* สีฟ้าเข้ม */
+}
+
 
 .hero p {
     font-size: 20px;
@@ -67,37 +76,41 @@ main {
     justify-content: space-around;
     margin-top: 40px;
 }
-
+/* Highlights Section */
+/* Highlights Section */
 .highlights article {
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1); /* เพิ่มแรเงา */
     padding: 20px;
     width: 45%;
     text-align: center;
 }
 
+
 .highlights article img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+    width: 100%; /* ทำให้รูปภาพมีความกว้างเต็มกรอบ */
+    height: 200px; /* กำหนดความสูงของรูปภาพให้คงที่ */
+    object-fit: cover; /* ให้รูปภาพครอบคลุมพื้นที่โดยไม่บิดเบือน */
+    border-radius: 8px; /* ให้มุมของรูปภาพโค้ง */
 }
+
 
 .highlights h3 {
     margin-top: 15px;
     font-size: 24px;
-    color: #333;
+    color: #0277BD; /* สีข้อความหัวข้อที่เข้ม */
 }
 
 .highlights p {
     font-size: 16px;
-    color: #666;
+    color: #01579B; /* สีข้อความที่เข้มขึ้น */
     margin-top: 10px;
 }
 
 /* Footer Section */
 footer {
-    background-color: #4fc3f7; /* สีฟ้าพลาสเทล */
+    background-color: #039BE5; /* สีพื้นหลังของ footer */
     color: white;
     text-align: center;
     padding: 20px;
