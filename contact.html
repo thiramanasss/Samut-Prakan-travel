@@ -4,15 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ติดต่อเรา</title>
-    <link rel="stylesheet" href="styles.css"> <!-- ลิงก์ไปยังไฟล์ CSS ของคุณ -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ปรับขนาดฟอร์มและช่องกรอกข้อมูลให้ใหญ่ขึ้น */
+        .contact-form {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 18px;
+            color: #fff;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #BB86FC;
+            border-radius: 8px;
+            background-color: #1E1E1E;
+            color: #fff;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #BB86FC;
+            outline: none;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        button {
+            background-color: #BB86FC;
+            color: #fff;
+            font-size: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #7A4DF1;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">หน้าหลัก</a></li>
-                <li><a href="places.html">สถานที่ท่องเที่ยว</a></li>
-                <li><a href="contact.html" class="active">ติดต่อเรา</a></li>
+                <li><a href="/">หน้าแรก</a></li>
+                <li><a href="/about">เกี่ยวกับเรา</a></li>
+                <li><a href="/contact" class="active">ติดต่อเรา</a></li>
             </ul>
         </nav>
     </header>
@@ -22,18 +81,42 @@
         <section class="hero">
             <h1>ติดต่อเรา</h1>
             <h2>เรายินดีให้ความช่วยเหลือ!</h2>
-            <p>หากคุณมีคำถามหรือข้อสงสัยสามารถติดต่อเราได้ที่อีเมลนี้:</p>
+            <p>หากคุณมีคำถามหรือข้อสงสัยสามารถติดต่อเราได้ทุกเมื่อ</p>
         </section>
 
-        <!-- Contact Information Section -->
-        <section class="contact-info">
-            <h3>ติดต่อผ่านอีเมล</h3>
-            <p>อีเมล: <a href="mailto:66160025@go.buu.ac.th">66160025@go.buu.ac.th</a></p>
+        <!-- Contact Form Section -->
+        <section class="contact-form">
+            <h3>ติดต่อเรา</h3>
+            <form action="mailto:66160025@go.buu.ac.th" method="POST" enctype="text/plain">
+                <div class="form-group">
+                    <label for="fullname">ชื่อและนามสกุล:</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="กรอกชื่อและนามสกุล" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">อีเมล:</label>
+                    <input type="email" id="email" name="email" placeholder="กรอกอีเมลของคุณ" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">เบอร์โทรศัพท์:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="กรอกเบอร์โทรศัพท์ของคุณ" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">ข้อความ:</label>
+                    <textarea id="message" name="message" rows="6" placeholder="กรอกข้อความของคุณ" required></textarea>
+                </div>
+                <button type="submit">ส่งข้อความ</button>
+            </form>
+        </section>
+        
+        <!-- History Section (optional) -->
+        <section class="history">
+            <h3>ประวัติของเรา</h3>
+            <p><span class="show">เรามีประสบการณ์ในการให้บริการลูกค้ามากว่า 20 ปี...</span></p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; ผู้ทำนายถิรมนัส พุ่มพวง รหัส นิสิต 66160025 . สงวนลิขสิทธิ์ทั้งหมด.</p>
+        <p>&copy; 2024 ชื่อบริษัทของคุณ. สงวนลิขสิทธิ์ทั้งหมด.</p>
     </footer>
 </body>
 </html>
