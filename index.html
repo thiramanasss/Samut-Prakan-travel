@@ -6,24 +6,33 @@
     <title>แนะนำสถานที่ท่องเที่ยวจังหวัดสมุทรปราการ</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* กำหนดให้ video อยู่ตรงกลาง */
+        /* สไตล์เริ่มต้น */
+        .hero h1, .hero p, .video-section h2, .video-section iframe {
+            opacity: 0; /* ซ่อนข้อความและวิดีโอ */
+            transition: opacity 1s ease-out; /* ทรานสิชั่นที่ทำให้ข้อความและวิดีโอค่อยๆ ปรากฏ */
+        }
+
+        .hero.show h1, .hero.show p, .video-section.show h2, .video-section.show iframe {
+            opacity: 1; /* ทำให้ข้อความและวิดีโอปรากฏ */
+        }
+
         .video-section {
             display: flex;
-            flex-direction: column; /* ทำให้ h2 อยู่บรรทัดใหม่ */
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             margin: 20px 0;
         }
 
         .video-section h2 {
-            margin-bottom: 20px; /* เพิ่มระยะห่างระหว่างหัวข้อกับวิดีโอ */
-            text-align: center; /* จัดข้อความให้ตรงกลาง */
+            margin-bottom: 20px;
+            text-align: center;
         }
 
         iframe {
-            width: 80%; /* ขนาดของวิดีโอที่ใหญ่ขึ้น */
-            max-width: 1000px; /* ขนาดสูงสุดของวิดีโอ */
-            height: 560px; /* ความสูงของวิดีโอ */
+            width: 80%;
+            max-width: 1000px;
+            height: 560px;
         }
     </style>
 </head>
@@ -73,10 +82,20 @@
     </footer>
 
     <script>
-        // เมื่อหน้าเว็บโหลดเสร็จให้แสดงประวัติความเป็นมาค่อยๆ ปรากฏ
+        // เมื่อหน้าเว็บโหลดเสร็จให้แสดงข้อความและวิดีโอค่อยๆ ปรากฏทีละชิ้น
         window.onload = function() {
-            var historySection = document.getElementById('history');
-            historySection.classList.add('show');
+            var heroSection = document.querySelector('.hero');
+            var videoSection = document.querySelector('.video-section');
+            
+            // แสดงข้อความใน hero section หลังจากโหลดเสร็จ
+            setTimeout(function() {
+                heroSection.classList.add('show');
+            }, 500); // ช้าไป 500ms
+
+            // แสดงวิดีโอหลังจาก hero section ปรากฏไปแล้ว
+            setTimeout(function() {
+                videoSection.classList.add('show');
+            }, 1000); // ช้าไป 2000ms (2 วินาที)
         }
     </script>
 </body>
