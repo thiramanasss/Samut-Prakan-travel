@@ -45,6 +45,42 @@ nav ul li a:hover {
 main {
     padding: 20px;
 }
+.history {
+    opacity: 0;
+    transform: translateY(50px); /* ซ่อนเนื้อหาด้านล่าง */
+    animation: slideUp 1s ease-out forwards; /* ใช้ animation เพื่อให้ข้อความขึ้นจากด้านล่าง */
+}
+
+/* Animation ที่จะทำให้ข้อความค่อยๆ ขึ้นจากด้านล่าง */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* เริ่มจากด้านล่าง */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* ขึ้นมาที่ตำแหน่งเดิม */
+    }
+}
+
+/* เพิ่ม transition ให้กับแต่ละบรรทัด */
+.history p {
+    line-height: 1.8;
+}
+
+.history p span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px); /* ทำให้ข้อความแต่ละบรรทัดปรากฏจากด้านล่าง */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* การแสดงข้อความทีละบรรทัด */
+.history p span.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 /* Hero Section */
 .hero {
