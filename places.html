@@ -26,31 +26,39 @@
         </section>
 
         <section class="highlights">
-            <article>
+            <article class="highlight-item" onclick="showDetails('place1', this)">
                 <img src="1.jpg" alt="สถานที่ท่องเที่ยว 1">
                 <h3>ตลาดน้ำบางน้ำผึ้ง</h3>
                 <p>ตลาดน้ำบางน้ำผึ้งเป็นตลาดน้ำที่มีบรรยากาศแบบดั้งเดิม พร้อมอาหารพื้นบ้านและสินค้าท้องถิ่นมากมาย</p>
             </article>
-            <article>
+            <article class="highlight-item" onclick="showDetails('place2', this)">
                 <img src="2.jpg" alt="สถานที่ท่องเที่ยว 2">
                 <h3>ฟาร์มจระเข้สมุทรปราการ</h3>
                 <p>ฟาร์มจระเข้สมุทรปราการเป็นสถานที่ท่องเที่ยวที่น่าสนใจที่สามารถชมจระเข้และการแสดงต่างๆ ที่เกี่ยวกับจระเข้</p>
             </article>
-            <article>
+            <article class="highlight-item" onclick="showDetails('place3', this)">
                 <img src="3.jpg" alt="สถานที่ท่องเที่ยว 3">
                 <h3>วัดพระสมุทรเจดีย์</h3>
                 <p>วัดพระสมุทรเจดีย์เป็นวัดที่มีพระเจดีย์สูงใหญ่และวิวทิวทัศน์ที่สวยงามของอ่าวไทย</p>
             </article>
-            <article>
+            <article class="highlight-item" onclick="showDetails('place4', this)">
                 <img src="4.jpg" alt="สถานที่ท่องเที่ยว 4">
                 <h3>พิพิธภัณฑ์ช้างเอราวัณ</h3>
                 <p>พิพิธภัณฑ์ช้างเอราวัณมีการจัดแสดงเกี่ยวกับช้างและประวัติศาสตร์ของช้างในประเทศไทย</p>
             </article>
-            <article>
+            <article class="highlight-item" onclick="showDetails('place5', this)">
                 <img src="5.jpg" alt="สถานที่ท่องเที่ยว 5">
                 <h3>สถานตากอากาศบางปู</h3>
                 <p>สถานตากอากาศบางปูที่ที่เหมาะสำหรับการพักผ่อนและชมวิวทะเล พร้อมกิจกรรมทางน้ำต่างๆ</p>
             </article>
+        </section>
+
+        <!-- Section to show detailed information -->
+        <section id="place-details" class="details-section">
+            <h2>รายละเอียดสถานที่</h2>
+            <div id="details-content">
+                <!-- Detailed information will be shown here -->
+            </div>
         </section>
     </main>
 
@@ -58,5 +66,51 @@
     <footer>
         <p>&copy; 2024 จังหวัดสมุทรปราการ. สงวนลิขสิทธิ์.</p>
     </footer>
+
+    <script>
+        function showDetails(place, element) {
+            // ลบคลาส active จากทุกสถานที่
+            var items = document.querySelectorAll('.highlight-item');
+            items.forEach(function(item) {
+                item.classList.remove('active');
+            });
+
+            // เพิ่มคลาส active ให้กับสถานที่ที่ถูกคลิก
+            element.classList.add('active');
+
+            var detailsContent = document.getElementById('details-content');
+
+            // เปลี่ยนรายละเอียดตามสถานที่ที่คลิก
+            if (place === 'place1') {
+                detailsContent.innerHTML = `
+                    <h3>ตลาดน้ำบางน้ำผึ้ง</h3>
+                    <p>ตลาดน้ำบางน้ำผึ้งเป็นตลาดน้ำที่มีบรรยากาศแบบดั้งเดิม พร้อมอาหารพื้นบ้านและสินค้าท้องถิ่นมากมาย</p>
+                `;
+            } else if (place === 'place2') {
+                detailsContent.innerHTML = `
+                    <h3>ฟาร์มจระเข้สมุทรปราการ</h3>
+                    <p>ฟาร์มจระเข้สมุทรปราการเป็นสถานที่ท่องเที่ยวที่น่าสนใจที่สามารถชมจระเข้และการแสดงต่างๆ ที่เกี่ยวกับจระเข้</p>
+                `;
+            } else if (place === 'place3') {
+                detailsContent.innerHTML = `
+                    <h3>วัดพระสมุทรเจดีย์</h3>
+                    <p>วัดพระสมุทรเจดีย์เป็นวัดที่มีพระเจดีย์สูงใหญ่และวิวทิวทัศน์ที่สวยงามของอ่าวไทย</p>
+                `;
+            } else if (place === 'place4') {
+                detailsContent.innerHTML = `
+                    <h3>พิพิธภัณฑ์ช้างเอราวัณ</h3>
+                    <p>พิพิธภัณฑ์ช้างเอราวัณมีการจัดแสดงเกี่ยวกับช้างและประวัติศาสตร์ของช้างในประเทศไทย</p>
+                `;
+            } else if (place === 'place5') {
+                detailsContent.innerHTML = `
+                    <h3>สถานตากอากาศบางปู</h3>
+                    <p>สถานตากอากาศบางปูที่ที่เหมาะสำหรับการพักผ่อนและชมวิวทะเล พร้อมกิจกรรมทางน้ำต่างๆ</p>
+                `;
+            }
+
+            // แสดงรายละเอียดสถานที่
+            document.getElementById('place-details').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
