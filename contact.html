@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ติดต่อเรา</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
         /* ปรับขนาดฟอร์มและช่องกรอกข้อมูลให้ใหญ่ขึ้น */
@@ -66,15 +67,33 @@
     </style>
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">หน้าหลัก</a></li>
-                <li><a href="places.html">สถานที่ท่องเที่ยว</a></li>
-                <li><a href="contact.html">ติดต่อเรา</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Samutphakhan.png" alt="สมุทรปราการ" style="height: 40px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">หน้าหลัก</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="places.html">สถานที่ท่องเที่ยว</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">ติดต่อเรา</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
+    
 
     <main>
         <!-- Hero Section -->
@@ -116,5 +135,7 @@
     <footer>
         <p>&copy; 2024 ชื่อบริษัทของคุณ. สงวนลิขสิทธิ์ทั้งหมด.</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
