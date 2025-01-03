@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -176,3 +177,5 @@ footer {
     display: none;
     color: #E0E0E0; /* สีข้อความเทาอ่อน */
 }
+
+
